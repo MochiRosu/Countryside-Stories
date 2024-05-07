@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://fhr8st7epbev"]
+
+[ext_resource type="Texture2D" uid="uid://c3iubqppwekox" path="res://Asset/Tiny Wonder Farm/characters/main character/walk and idle.png" id="1_lyvyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ubbs"]
+atlas = ExtResource("1_lyvyj")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrg64"]
+atlas = ExtResource("1_lyvyj")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6f1c7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ubbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrg64")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eae7f"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -11)
+sprite_frames = SubResource("SpriteFrames_6f1c7")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.804723
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_eae7f")
