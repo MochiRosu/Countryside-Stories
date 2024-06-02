@@ -1959,5 +1959,6 @@ collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
+process_callback = 0
 limit_bottom = 90
 position_smoothing_enabled = true
