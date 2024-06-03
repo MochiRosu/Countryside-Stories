@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://fhr8st7epbev"]
 
 [ext_resource type="Texture2D" uid="uid://c3iubqppwekox" path="res://Asset/Tiny Wonder Farm/characters/main character/walk and idle.png" id="1_lyvyj"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_vod7f"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vod7f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eae7f"]
 radius = 7.0
@@ -117,3 +117,9 @@ shape = SubResource("CircleShape2D_eae7f")
 libraries = {
 "": SubResource("AnimationLibrary_myqsd")
 }
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Walk" type="Node" parent="StateMachine"]
