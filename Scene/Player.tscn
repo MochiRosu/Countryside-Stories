@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://fhr8st7epbev"]
+[gd_scene load_steps=13 format=3 uid="uid://fhr8st7epbev"]
 
 [ext_resource type="Texture2D" uid="uid://c3iubqppwekox" path="res://Asset/Tiny Wonder Farm/characters/main character/walk and idle.png" id="1_lyvyj"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_vod7f"]
+[ext_resource type="Script" path="res://Scripts/player_state_machine.gd" id="3_y83xc"]
+[ext_resource type="Script" path="res://Scripts/state_idle.gd" id="4_inxjr"]
+[ext_resource type="Script" path="res://Scripts/state_walk.gd" id="5_iyxht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eae7f"]
 radius = 7.0
@@ -119,7 +122,10 @@ libraries = {
 }
 
 [node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_y83xc")
 
 [node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_inxjr")
 
 [node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("5_iyxht")
