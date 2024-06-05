@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://dj40llxvufg2q"]
+
+[ext_resource type="Script" path="res://Scripts/TestSheep.gd" id="1_fmn8c"]
+[ext_resource type="Texture2D" uid="uid://csrrhicmyqhaw" path="res://Asset/Tiny Wonder Farm Animals/animals/sheep/fluffy white sheep sheet.png" id="1_xod8x"]
+[ext_resource type="Script" path="res://Scripts/interaction_area.gd" id="3_88iuw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd2r0"]
+atlas = ExtResource("1_xod8x")
+region = Rect2(104, 0, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pq5ky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd2r0")
+}],
+"loop": true,
+"name": &"sheep_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecyh4"]
+radius = 12.1655
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqmq3"]
+radius = 46.0977
+
+[node name="Sheep" type="CharacterBody2D"]
+script = ExtResource("1_fmn8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pq5ky")
+animation = &"sheep_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ecyh4")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("3_88iuw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_iqmq3")
