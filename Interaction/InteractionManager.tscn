@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rddfsqlro6ht"]
 
 [ext_resource type="Script" path="res://Interaction/InteractionManager.gd" id="1_6y32g"]
-[ext_resource type="FontFile" uid="uid://84dn3asmvtcv" path="res://Asset/Fonts/pixelFJ8pt1__.TTF" id="1_q6kct"]
+[ext_resource type="FontFile" uid="uid://84dn3asmvtcv" path="res://UI/Fonts/pixelFJ8pt1__.TTF" id="1_q6kct"]
 
 [node name="InteractionManager" type="Node2D" groups=["player"]]
 script = ExtResource("1_6y32g")
